@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>Resume Builder
+    </title>
+    <%include ../partials/head %>
+</head>
+
+<body>
+    <center>
+        <h3> Search found for "
+            <%= searchname %> "</h3>
+    </center>
+
+
+
+    <% data.forEach(function(data) { %>
+    <center>
+        <%= data.username %>
+        <%= data.user_email %>
+
+    </center>
+    <% }); %>
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+</body>
+
+</html>

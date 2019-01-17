@@ -1,0 +1,16 @@
+<div id="mySidenav" class="sidenav">
+    <center><img src="logo.png" alt="logo" width="250" height="250"></center>
+    <form method="post" action="mysearchaction">
+        <center><input type="text" id="mySearch" name="username" onkeyup="myFunction()" placeholder="Search.." title="Type in a category"></center>
+    </form>
+    <a href="about">About</a>
+    <a href="resumetemplate.html">Resume Templates</a>
+    <a href="resume_generator.html">Resume Generator</a>
+
+    <%if(check){%>
+    <%include ../partials/header-user%>
+    <%}else {%>
+    <%include ../partials/header-button%>
+    <%}%>
+
+</div>

@@ -1,0 +1,150 @@
+<html>
+
+<head>
+    <title>
+        Resume builder:Template one
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="http://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Roboto", sans-serif
+        }
+
+        .outer {
+            /* border: 1px solid black; */
+            width: 100%;
+            float: left;
+        }
+
+        .inner {
+            margin: 10px;
+            float: left;
+            width: 45%;
+            text-indent: 10px;
+            /* border: 1px solid black; */
+        }
+
+        div.w3 {
+            text-indent: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w3-content w3-margin-top" style="max-width:1400px; ">
+        <h5>
+            <%=formdata.firstname%>
+            <%=formdata.lastname%>
+        </h5>
+        <div class="w3">
+            <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>
+                <%= formdata.job_desig%>
+            </p>
+            <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>
+                <%=formdata.city%>,
+                <%=formdata.state%>,
+                <%=formdata.country%>
+            </p>
+            <p><i class="fa fa-envelope fa fw w3-margin-right w3 large w3-text-teal"></i>
+                <%=formdata.email%>
+            </p>
+            <p><i class="fa fa-phone fa fw w3-margin-right w3 large w3-text-teal"></i>
+                <%=formdata.phone%>
+            </p>
+            <%=formdata.user_obj%>
+        </div>
+
+        <div class="outer" class="w3-row-padding">
+            <p style="font-size:20px"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>WORK
+                EXPERIENCE
+            </p>
+            <div class="inner">
+                <p>
+
+                    <% formdata.exp.forEach(function(expe) { %>
+                    <li>
+                        <%= expe %>
+                        <p><i class="fa fa-calendar fa-fw w3-margin-right w3-large w3-text-teal"></i>
+                            Jan 2019 - <span class="w3-tag w3-teal w3-round">
+                                Current</span></p>
+                    </li>
+                    <% }); %>
+
+
+                </p>
+
+            </div>
+        </div>
+        <div class="outer">
+            <p style="font-size:20px"><i class="fa fa-asterisk fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
+                EDUCATION
+            </p>
+
+
+            <div class="inner">
+                <p>
+                    <% formdata.edu.forEach(function(ed) { %>
+
+                    <li>
+                        <%= ed %>
+                    </li>
+
+                    <% }); %>
+                </p>
+            </div>
+
+
+
+        </div>
+        <!-- </div> -->
+        <div class="outer">
+            <p style="font-size:20px"><i class="fa fa-product-hunt fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
+                PROJECTS
+            </p>
+            <div class="inner">
+
+                <p>
+
+                    <% formdata.projects.forEach(function(pro) { %>
+                    <li>
+                        <%= pro%>
+                    </li>
+                    <% }); %>
+                </p>
+
+
+
+            </div>
+        </div>
+        <div class="outer">
+            <p style="font-size:20px"><i class="fa fa-asterisk fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
+                SKILLS
+
+                <div class="inner">
+                    <p>
+                        <% formdata.skills.forEach(function(skill) { %>
+                        <li>
+                            <%= skill %>
+                        </li>
+                        <% }); %>
+
+                    </p>
+                </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
